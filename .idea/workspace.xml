@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f773694d-e80d-4c6a-8c1e-62abe3874596" name="Changes" comment="useEffect">
+    <list default="true" id="f773694d-e80d-4c6a-8c1e-62abe3874596" name="Changes" comment="UseRef">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -10,6 +11,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -43,7 +49,7 @@
       <option name="presentableId" value="Default" />
       <updated>1660737068816</updated>
       <workItem from="1660737069932" duration="19000" />
-      <workItem from="1660811881596" duration="4279000" />
+      <workItem from="1660811881596" duration="5898000" />
     </task>
     <task id="LOCAL-00001" summary="useEffect">
       <created>1660817642434</created>
@@ -52,7 +58,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660817642434</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="UseRef">
+      <created>1660819460587</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1660819460587</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -72,6 +85,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="useEffect" />
-    <option name="LAST_COMMIT_MESSAGE" value="useEffect" />
+    <MESSAGE value="UseRef" />
+    <option name="LAST_COMMIT_MESSAGE" value="UseRef" />
   </component>
 </project>
