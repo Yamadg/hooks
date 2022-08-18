@@ -1,46 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
+
+
 
 function App() {
-    const [type, setType] = useState('users')
-    const [data, setData] = useState([])
-    const [pos, setPos] = useState({
-        x: 0, y: 0
-    })
-    const mouseMoveHandler = event =>{
-        setPos({
-            x: event.clientX,
-            y: event.clientY,
-        })
-    }
+// const [renderCount,setRenderCount]= useState(1)
+    const [value,setValue] = useState('initial')
+    const renderCount = useRef(1)
+    const inputRef = useRef(null)
+    const prevValue = useRef('')
 
-    useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/${type}`)
-            .then(response => response.json())
-            .then(json => setData(json))
 
-        return () => {
-            console.log('delete ')
-        }
-    }, [type])
 
-    useEffect(() => {
-        window.addEventListener('mousemove', mouseMoveHandler)
-        return () =>{
-            window.removeEventListener('mousemove', mouseMoveHandler)
-        }
-    }, [])
+    useEffect(()=>{
+        renderCount.current ++
+        console.log(inputRef.current.value)
+    },)
+
+    useEffect(()=>{
+        prevValue.current = value
+    },[value])
+
+
+    const focus = () => inputRef.current.focus()
+
+
 
     return (
         <div>
-            <h1>{type}</h1>
-            <button onClick={() => setType('users')}>users</button>
-            <button onClick={() => setType('todos')}>Todos</button>
-            <button onClick={() => setType('posts')}>posts</button>
-
-            {/*<pre>{JSON.stringify(data,null,2)}</pre>*/}
-            <pre>{JSON.stringify(pos, null, 2)}</pre>
+            <h1>Количество рендеров : {renderCount.current}</h1>
+            <h2>Прошлое состояние : {prevValue.current}</h2>
+            <input ref={inputRef} type='text' onChange={e=> setValue(e.target.value)} value={value}/>
+            <button onClick={focus}></button>
         </div>
     );
 }
