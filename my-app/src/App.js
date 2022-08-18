@@ -1,40 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
-import {useEffect, useMemo, useRef, useState} from "react";
+import {useCallback, useState} from "react";
+import ItemsList from "./ItemsList";
 
 
 function App() {
 
-    const [number, setNumber] = useState(42)
+    const [number, setNumber] = useState(1)
     const [colored, setColored] = useState(false)
 
-
-
-    const styles = useMemo(() =>({
-            color : colored ? ' darkred' : 'black'
-
-    }),[colored])
-
-    function complexCompute(num) {
-        let i = 0
-        while (i < 1000000000) i++
-        return num * 2
+    const styles = {
+        color: colored ? 'darkred' : 'black'
     }
 
-    const computed = useMemo(() => {
-        return complexCompute(number)
+    const generateItemsAPI = useCallback( () => {
+        return new Array(number).fill('').map((_, i) => `Элемент ${i + 1}`)
     },[number])
-
-    useEffect(() =>{
-        console.log('Styles changed')
-    },[styles])
 
     return (
         <div>
-            <h1 style={styles}>Svoistvo: {computed}</h1>
+            <h1 style={styles}>Svoistvo: {number} </h1>
             <button onClick={() => setNumber(prev => prev + 1)}>ADD</button>
-            <button onClick={() => setNumber(prev => prev - 1)}>REMOVE</button>
             <button onClick={() => setColored(prev => !prev)}>Change</button>
+
+            <ItemsList getItems={generateItemsAPI}/>
         </div>
     );
 }
